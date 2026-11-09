@@ -1,1 +1,1 @@
-# Building a basic web scrapper using Beautifull soup!
+# Building a basic web scrapper using Beautiful soup!
