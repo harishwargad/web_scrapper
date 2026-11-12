@@ -20,5 +20,5 @@ def scrape_countries(url: str) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 df = scrape_countries(URL)
-df.to_csv("CountriesInfo.csv", index=False, encoding="utf-8")
-print(len(df))  # expect 250
+df.to_csv("Scrapped_countriesInfo.csv", index=False, encoding="utf-8")
+print(len(df))  
