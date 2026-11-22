@@ -4,8 +4,6 @@ import requests
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 
-# url = 'https://www.flipkart.com/search?q=55+inch+television&sid=ckf%2Cczl&as=on&as-show=on&otracker=AS_QueryStore_OrganicAutoSuggest_1_8_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_8_na_na_na&as-pos=1&as-type=RECENT&suggestionId=55+inch+television%7CTelevisions&requestId=e305c8bf-8b78-481a-9d60-5d8cca69b70b&as-backfill=on&page=2'
-
 load_dotenv()
 httpProxy_url = os.getenv("http_proxy")
 httpsProxy_url = os.getenv("https_proxy")
