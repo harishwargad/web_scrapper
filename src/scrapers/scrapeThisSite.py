@@ -2,9 +2,11 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
+from config import COUNTRIES_CSV
+
 URL = "https://www.scrapethissite.com/pages/simple/"
 
-def scrape_countries(url: str) -> pd.DataFrame:
+def scrape_countries(url: str = URL) -> pd.DataFrame:
     r = requests.get(url, timeout=10)
     r.raise_for_status()
     soup = BeautifulSoup(r.text, "html.parser")
@@ -19,6 +21,8 @@ def scrape_countries(url: str) -> pd.DataFrame:
         })
     return pd.DataFrame(rows)
 
-df = scrape_countries(URL)
-df.to_csv("Scrapped_countriesInfo.csv", index=False, encoding="utf-8")
-print(len(df))  
+if __name__ == "__main__":
+    df = scrape_countries()
+    COUNTRIES_CSV.parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(COUNTRIES_CSV, index=False, encoding="utf-8")
+    print(f"CSV Created at {COUNTRIES_CSV}!")
